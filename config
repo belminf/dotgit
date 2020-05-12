@@ -13,13 +13,16 @@
 
 [alias]
     undo = reset --soft HEAD^
-    st = status --short --branch
     commend = commit --amend --no-edit
+    rmtag = push --delete
+    unstage = reset HEAD --
+    nb = checkout -b
+    st = status --short --branch
     cp = commit -p -m
     ri = rebase -i
     dc = diff --cached
     dw = diff --color-words=.
-    rmtag = push --delete
+    lg = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr %an)%Creset' --abbrev-commit --date=relative --no-merges
     lb = !git reflog show --pretty=format:'%gs ~ %gd' --date=relative | grep 'checkout:' | grep -oE '[^ ]+ ~ .*' | awk -F~ '!seen[$1]++' | head -n 10 | awk -F' ~ HEAD@{' '{printf(\"  \\033[33m%s: \\033[37m %s\\033[0m\\n\", substr($2, 1, length($2)-1), $1)}'
 
 [include]
