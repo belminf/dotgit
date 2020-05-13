@@ -22,7 +22,7 @@
     ri = rebase -i
     dc = diff --cached
     dw = diff --color-words=.
-    lg = log --pretty=format:'\n%C(yellow)%H%Creset%C(green) %D%Creset%Creset\n%s%C(blue) --%an, %cr%Creset' --date=relative --no-merges
+    lg = log --pretty=format:'\n%C(yellow)%H%Creset%C(green) %D%Creset%Creset\n%s%C(blue) --%an, %cr%Creset' --date=relative
     br = for-each-ref --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) %(color:green)(%(objectname:short))%(color:reset): %(contents:subject) %(color:blue)--%(authorname), %(committerdate:relative)%(color:reset)'
 
 [include]
