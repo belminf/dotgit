@@ -16,10 +16,12 @@
     commend = commit --amend --no-edit
     rmtag = push --delete
     unstage = reset HEAD --
+    set-upstream = !git branch --set-upstream-to=origin/$(git symbolic-ref --short HEAD)
+    conflicted = diff --name-only --diff-filter=U --relative
     nb = checkout -b
     st = status --short --branch
     cp = commit -p -m
-    ri = rebase -i
+    ri = rebase -i master
     dc = diff --cached
     dw = diff --color-words=.
     lg = log --pretty=format:'\n%C(yellow)%H%Creset%C(green) %D%Creset%Creset\n%s%C(blue) --%an, %cr%Creset' --date=relative
@@ -27,3 +29,6 @@
 
 [include]
     path = config.local
+
+[init]
+    defaultBranch = main
