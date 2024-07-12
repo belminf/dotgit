@@ -1,9 +1,11 @@
 [core]
     editor = nvim
+    excludesFile = ~/.gitignore
 
 [push]
     default = current
     followTags = true
+    autoSetupRemote = true
 
 [pull]
     rebase = true
@@ -32,3 +34,6 @@
 
 [init]
     defaultBranch = main
+
+[checkout]
+    defaultRemote = origin
